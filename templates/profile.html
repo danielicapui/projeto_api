@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1 class="title">  Bem-vindo a seu perfil , {{nome}}!</h1>
+  <a href="{{ url_for('agenda.index') }}" class="navbar-item">Ir para a Agenda</a>
+{% endblock %}

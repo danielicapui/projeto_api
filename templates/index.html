@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="index">
+<html lang="pt-br">
+	<head>
+		<title>Menu Agenda</title>
+		<meta charser="UTF-8">
+		<meta name="description".content="Pagina da Agenda!">
+        <link rel="stylesheet" href="{{ url_for('static',filename='styles/index.css')}}">
+   <script type="text/javascript" src="{{ url_for('static',filename='scripts/index.js')}}"></script>
+	</head>
+    <body>
+        <h1>Escolha a opção desejada</h1>
+		<h2 id="horario"></h2>
+        <p>Olá, <a href="{{ url_for('static',filename='scripts/index.js')}}" tittle="Aprendendo a programar">Escolha a opção</a></p>
+		<a href="{{ url_for('agenda.consulta_por_letra') }}" class="navbar-item">Consultar por letra </a>
+		<a href="{{ url_for('agenda.consulta_por_nome') }}" class="navbar-item">Consultar por nome</a>
+		<a href="{{ url_for('agenda.proximo_registro') }}" class="navbar-item">Proximo registro</a>
+		<a href="{{ url_for('agenda.proxima_letra') }}" class="navbar-item">Proxima letra</a>
+		<a href="{{ url_for('agenda.deletar_registro')}}" class="navbar-item">Deletar Registro</a>
+		<a href="{{ url_for('agenda.update_registro') }}" class="navbar-item">Atualizar Registro</a>
+		<a href="{{ url_for('agenda.adicionar_recursos') }}" class="navbar-item">Criar Registro</a>
+		<!-- adiciona um button com a função no onclick de um script -->
+		<button type="button" onclick="mostrarData()">Exibir horários</button>
+		<button type="button" onclick="mostrarOutput()">Aviso!</button>
+		<p id="msg"></p>
+    </body>
+</html>
+</div>
+{% endblock %}

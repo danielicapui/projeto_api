@@ -1,0 +1,5 @@
+flask
+Flask-SQLAlchemy
+flask-migrate
+psycopg2-binary
+pandas

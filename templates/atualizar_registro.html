@@ -1,0 +1,40 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="column is-4 is-offset-4">
+    <h3 class="Registro">Atualizar recursos</h3>
+    <div class="box">
+        {% with smessages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="notification is-danger">
+                {{ messages[0] }}
+            </div>
+        {% endif %}
+        {% endwith %}
+        <h1>Preencha os campos a seguir para atualizaro</h1>>
+        <form method="POST" action="/agenda/atualizar_registro">
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" type="text" name="id" placeholder="ID de quem deseja-se atualizar" autofocus="">
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" type="text" name="nome" placeholder="Novo Nome do contato" autofocus="">
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" type="tel" name="telefone" placeholder="Novo número 88993018328" pattern="[0-9]{2}[0-9]{5}[0-9]{4}" required>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" type="email" name="email" placeholder="Novo Email do contato" autofocus="">
+                </div>
+            </div>
+            <button class="button is-block is-info is-large is-fullwidth">Atualizar Registro</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
