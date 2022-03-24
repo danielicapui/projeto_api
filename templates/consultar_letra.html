@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="column is-4 is-offset-4">
+    <h3 class="Consulta">Consultar Por Letra</h3>
+    <div class="box">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="notification is-danger">
+                {{ messages[0] }}
+            </div>
+        {% endif %}
+        {% endwith %}
+        <h1>Digite a letra que deseja procurar</h1>>
+        <form method="POST" action="/agenda/consultar_letra">
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" type="text" name="letra" placeholder="Letra" autofocus="">
+                </div>
+            </div>
+            <button class="button is-block is-info is-large is-fullwidth">Procurar por letra</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
